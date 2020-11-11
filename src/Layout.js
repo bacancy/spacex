@@ -10,8 +10,6 @@ const Layout = () => {
     const [landSuccess, setLandSuccess] = useState(null);
 
     useEffect(() => {
-        const url = `${ENDPOINT}${landSuccess ? '&land_success=' + landSuccess : ''}${launchSuccess ? '&launch_success=' + launchSuccess : ''}${launchYear !== '0' ? '&launch_year=' + launchYear : ''}`;
-        console.log(url);
         axios.get(`${ENDPOINT}${landSuccess ? '&land_success=' + landSuccess : ''}${launchSuccess ? '&launch_success=' + launchSuccess : ''}${launchYear !== '0' ? '&launch_year=' + launchYear : ''}`)
         .then(response => {
             setFlightList(response.data);
